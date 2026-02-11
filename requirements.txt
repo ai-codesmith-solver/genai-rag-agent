@@ -1,0 +1,26 @@
+# FastAPI Core
+fastapi
+uvicorn
+pydantic
+pydantic-settings
+python-dotenv
+
+# AI & LLM
+google-generativeai
+langchain-google-genai
+
+# LangChain Ecosystem
+langchain
+langchain-community
+langchain-text-splitters
+langchain-core
+
+# Vector Store & Embeddings
+pinecone-client
+langchain-pinecone
+langchain-huggingface
+sentence-transformers
+
+# Document Parsing
+unstructured
+markdown
