@@ -35,7 +35,6 @@ class Settings(BaseSettings):
     # LLM Settings
     gemini_api_key: str = ""
     model_name: str = "gemini-2.5-flash"
-    max_output_tokens: int = 512
     temperature: float = 0.4
 
     
