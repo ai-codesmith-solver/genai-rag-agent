@@ -61,6 +61,10 @@ def main():
         else:
             logger.warning("No context retrieved. Is the index populated?")
 
+        # Optional: Print retrieved document titles for verification
+        titles = search_docs(query, retrieved_docs) #tools function to extract titles from retrieved docs
+        logger.info(f"✓ Retrieved document titles: {titles}")
+
     except Exception as e:
         logger.error(f"An error occurred during retrieval test: {e}", exc_info=True)
 
