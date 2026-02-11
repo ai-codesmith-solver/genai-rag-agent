@@ -48,14 +48,17 @@ def run_agent(query: str) -> Dict:
     if is_comparison:
         intent = "comparison"
         agent_decision = "combined_multiple_docs"
-        docs_to_use = retrieved_docs
         selected_titles = search_docs(query, retrieved_docs)
+        docs_to_use = [
+            doc for doc in retrieved_docs
+            if get_title(doc) in selected_titles
+        ]
     else:
         # Default fallback is 'explanation'
         intent = "explanation"
         agent_decision = "answered_using_retrieved_context"
-        docs_to_use = [retrieved_docs[0]]
         selected_titles = [get_title(retrieved_docs[0])]
+        docs_to_use = [retrieved_docs[0]]
 
     # Generate answer using the orchestrated state
     answer = generate_answer(
